@@ -1,0 +1,19 @@
+# App Runner 設定ファイルのバージョン
+version: 1.0
+
+# ビルドに関する設定
+build:
+  # ソースコードからビルドすることを指定
+  build_from_source:
+    # Docker を使ってビルドする
+    provider: docker
+    # Dockerfile のパスを指定
+    dockerfile: src/aws-documentation-mcp-server/Dockerfile
+    # ビルドの起点となるディレクトリ（Dockerfile内のCOPYコマンドなどに影響）
+    build_context: src/aws-documentation-mcp-server
+
+# 実行に関する設定
+run:
+  # 公開するポート番号
+  port: 9712
+  # 実行コマンドはDockerfileのENTRYPOINTが使われます
