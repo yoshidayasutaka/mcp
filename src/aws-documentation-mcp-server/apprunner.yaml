@@ -1,0 +1,6 @@
+version: 1.0
+build:
+  build_from_source:
+    provider: docker
+run:
+  port: 9712
